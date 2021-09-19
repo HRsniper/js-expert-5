@@ -4,4 +4,4 @@
 
 ### Página principal
 
-![](./.github/demo.png)
+![](../../.github/demo.png)
