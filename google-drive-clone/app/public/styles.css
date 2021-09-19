@@ -204,9 +204,11 @@ input[type="search"]::placeholder {
 .modal {
   word-wrap: normal;
 }
+
 #progress-bar {
   width: 100%;
 }
+
 #output {
   font-size: 20px;
   word-wrap: break-word;
@@ -221,9 +223,11 @@ input[type="search"]::placeholder {
   margin: 50px auto;
   padding: 20px;
 }
+
 .drop-area.highlight {
   border-color: purple;
 }
+
 #fileElem {
   display: none;
 }

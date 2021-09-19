@@ -9,23 +9,26 @@
   "license": "MIT",
   "scripts": {
     "prestart": "mkdir.bat",
-    "prestart:linux": "mkdir -p downloads",
-    "start": "npx nodemon src/index.js",
+    "dev": "npm run prestart && npx nodemon src/index.js",
+    "start": "npm run prestart && npx node src/index.js",
     "test": "npx cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --runInBand",
     "test:watch": "npx cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch --runInBand",
     "test:cov": "npx cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --runInBand --coverage"
   },
   "devDependencies": {
-    "jest": "^27.1.0"
+    "jest": "^27.1.0",
+    "nodemon": "^2.0.12"
   },
   "dependencies": {
     "busboy": "^0.3.1",
     "cross-env": "^7.0.3",
     "form-data": "^4.0.0",
-    "nodemon": "^2.0.12",
     "pino": "^6.13.2",
     "pino-pretty": "^5.1.3",
     "pretty-bytes": "^5.6.0",
     "socket.io": "^4.2.0"
+  },
+  "engines": {
+    "node": "16"
   }
 }

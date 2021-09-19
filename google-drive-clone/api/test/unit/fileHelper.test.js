@@ -1,7 +1,10 @@
 import { describe, expect, jest, test } from "@jest/globals";
 import fs from "fs";
 import { FileHelper } from "../../src/fileHelper.js";
-// import { Routes } from "./../../src/routes.js";
+import { whichPlatformBar } from "../../src/util/whichPlatformBar.js";
+// import { Routes } from "../../src/routes.js";
+
+const { bar } = whichPlatformBar();
 
 describe("#FileHelper tests suite", () => {
   describe("#getFileStatus", () => {
@@ -45,7 +48,7 @@ describe("#FileHelper tests suite", () => {
         }
       ];
 
-      expect(fs.promises.stat).toHaveBeenCalledWith(`/tmp/${filename}`);
+      expect(fs.promises.stat).toHaveBeenCalledWith(`/tmp${bar}${filename}`);
       expect(result).toMatchObject(expectedResult);
     });
   });

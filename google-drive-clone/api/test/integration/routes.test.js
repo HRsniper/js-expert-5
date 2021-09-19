@@ -4,8 +4,8 @@ import fs from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
 import { logger } from "../../src/logger.js";
+import { Routes } from "../../src/routes.js";
 import { TestUtil } from "../util/testUtil.js";
-import { Routes } from "./../../src/routes.js";
 // import { FileHelper } from "../../src/fileHelper.js";
 
 describe("#Routes integration test suite", () => {

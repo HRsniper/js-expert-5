@@ -1,11 +1,14 @@
 import fs from "fs";
 import prettyBytes from "pretty-bytes";
+import { whichPlatformBar } from "./util/whichPlatformBar.js";
+
+const { bar } = whichPlatformBar();
 
 class FileHelper {
   static async getFilesStatus(downloadsFolder) {
     const currentFiles = await fs.promises.readdir(downloadsFolder);
     const status = await Promise.all(
-      currentFiles.map((file) => fs.promises.stat(`${downloadsFolder}/${file}`))
+      currentFiles.map((file) => fs.promises.stat(`${downloadsFolder}${bar}${file}`))
     );
 
     const filesStatus = [];

@@ -6,7 +6,7 @@ import { logger } from "../../src/logger.js";
 import { UploadHandler } from "../../src/uploadHandler.js";
 import { whichPlatformBar } from "../../src/util/whichPlatformBar.js";
 import { TestUtil } from "../util/testUtil.js";
-// import { Routes } from "./../../src/routes.js";
+// import { Routes } from "../../src/routes.js";
 
 const { bar, partition } = whichPlatformBar();
 
@@ -68,7 +68,7 @@ describe("#UploadHandler test suite", () => {
       const params = {
         fieldname: "video",
         file: TestUtil.generateReadableStream(chunks),
-        filename: "mockFile.mp4"
+        filename: "mockFile.mov"
       };
       await handler.onFile(...Object.values(params));
 
